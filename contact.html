@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #eaf2fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #ffffff;
+            border: 1px solid #d0d7e5;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .form-title {
+            font-size: 1.5em;
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .form-group label {
+            width: 150px;
+            font-weight: bold;
+            color: #004080;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            flex: 1;
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #b0c7e0;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 60px;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .form-actions button {
+            padding: 8px 16px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-actions .send-btn {
+            background-color: #004080;
+            color: white;
+        }
+
+        .form-actions .clear-btn {
+            background-color: #d0d7e5;
+            color: black;
+        }
+
+        .extra-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            width: 45%;
+            background-color: #f8f9fd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            color: #004080;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .extra-actions {
+            width: 45%;
+            text-align: center;
+        }
+
+        .extra-actions .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1em;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .extra-actions .whatsapp-btn {
+            background-color: #25D366;
+        }
+
+        .extra-actions .whatsapp-btn:hover {
+            background-color: #1DA955;
+        }
+
+        .extra-actions .map-btn {
+            background-color: #004080;
+        }
+
+        .extra-actions .map-btn:hover {
+            background-color: #003366;
+        }
+
+        @media screen and (max-width: 768px) {
+            .extra-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-info,
+            .extra-actions {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="form-title">Contact Form</h2>
+        <form action="send_email.php" method="POST">
+            <div class="form-group">
+                <label for="checkin">Check-In <span class="required">*</span></label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout">Check-Out <span class="required">*</span></label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile <span class="required">*</span></label>
+                <input type="tel" id="mobile" name="mobile" placeholder="10 digit Mobile no." required>
+            </div>
+            <div class="form-group">
+                <label for="rooms">Number of Rooms <span class="required">*</span></label>
+                <input type="number" id="rooms" name="rooms" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="adults">Number of Adults <span class="required">*</span></label>
+                <input type="number" id="adults" name="adults" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="children">Number of Children <span class="required">*</span></label>
+                <input type="number" id="children" name="children" min="0">
+            </div>
+            <div class="form-group">
+                <label for="room-type">Room Type <span class="required">*</span></label>
+                <select id="room-type" name="room-type" required>
+                    <option value="">--Select Room--</option>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message here..."></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="send-btn">Send</button>
+                <button type="reset" class="clear-btn">Clear</button>
+            </div>
+        </form>
+
+        <div class="extra-section">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+                <p><strong>Phone:</strong> +91 9791962802</p>
+                <p><strong>Email:</strong> contact@nivethinlodge.com</p>
+            </div>
+
+            <div class="extra-actions">
+                <a href="https://wa.me/+919791962802" class="btn whatsapp-btn" target="_blank">Contact on WhatsApp</a>
+                <a href="https://maps.app.goo.gl/NbD6MdPJav5UNpvq7" class="btn map-btn" target="_blank">View on Google Maps</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

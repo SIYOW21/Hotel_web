@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - NivethIn Lodge</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf2fc;
+            color: #004080;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: calc(33.333% - 20px);
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            text-align: center;
+            background: #f8f9fd;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.2em;
+            color: #003366;
+            margin: 10px 0;
+        }
+
+        .gallery-item p {
+            font-size: 0.95em;
+            color: #004080;
+        }
+
+        /* Animation Active Class */
+        .gallery-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h1>Gallery - NivethIn Lodge</h1>
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Hotel Exterior">
+                <div class="description">
+                    <h3>Hotel Exterior</h3>
+                    <p>A beautiful and welcoming facade of NivethIn Lodge.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Deluxe Room">
+                <div class="description">
+                    <h3>Deluxe Room</h3>
+                    <p>Experience comfort and luxury in our deluxe rooms.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Suite Room">
+                <div class="description">
+                    <h3>Suite Room</h3>
+                    <p>Relax and unwind in our spacious suite rooms.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Restaurant">
+                <div class="description">
+                    <h3>Restaurant</h3>
+                    <p>Enjoy fine dining at our in-house restaurant.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Banquet Hall">
+                <div class="description">
+                    <h3>Banquet Hall</h3>
+                    <p>A perfect venue for celebrations and meetings.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Swimming Pool">
+                <div class="description">
+                    <h3>Swimming Pool</h3>
+                    <p>Refresh and rejuvenate in our crystal-clear pool.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for Animation
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        // Target all gallery items
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach((item) => observer.observe(item));
+    </script>
+</body>
+</html>
