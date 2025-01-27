@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - NivethIn Lodge</title>
+    <style>
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf2fc;
+            color: #004080;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: calc(33.333% - 20px);
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            text-align: center;
+            background: #f8f9fd;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.2em;
+            color: #003366;
+            margin: 10px 0;
+        }
+
+        .gallery-item p {
+            font-size: 0.95em;
+            color: #004080;
+        }
+
+        /* Animation Active Class */
+        .gallery-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .gallery-item {
+                width: 100%;
+            } 
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .logo {
+            margin-top: 5px;
+            margin-left:240px; /* Push the logo to the right */   
+        }
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items:Top;
+            position: top;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding-left:100px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+         .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0; /* Hide middle bar */
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+          .nav-links.active {
+            display: flex;
+        }
+         .nav-links a:hover {
+            color: #ffcc00;
+        }
+          .container1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+           .header {
+            background-color: #004080;
+            color: white;
+            padding: 10px 0px;
+           
+        }
+         .footer {
+            text-align: center;
+            background-color: #004080;
+            color: rgb(235, 235, 243);
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px){
+            .logo {
+            margin-top: 5px;
+            margin-left:150px; /* Push the logo to the right */   
+        }
+        .nav-links {
+             list-style: none;
+             display: flex;
+             gap: 20px;
+             padding-left: 60px;
+}
+
+        }
+    </style>
+</head>
+<body>
+      <header class="header">
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img src="Images/logo.png" class="logo" alt="Hotel Logo">
+            <nav class="nav-wrapper">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="gallery-container">
+        <h1>Gallery - NivethIn Lodge</h1>
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Hotel Exterior">
+                <div class="description">
+                    <h3>Hotel Exterior</h3>
+                    <p>A beautiful and welcoming facade of NivethIn Lodge.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Deluxe Room">
+                <div class="description">
+                    <h3>Deluxe Room</h3>
+                    <p>Experience comfort and luxury in our deluxe rooms.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Suite Room">
+                <div class="description">
+                    <h3>Suite Room</h3>
+                    <p>Relax and unwind in our spacious suite rooms.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Restaurant">
+                <div class="description">
+                    <h3>Restaurant</h3>
+                    <p>Enjoy fine dining at our in-house restaurant.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Banquet Hall">
+                <div class="description">
+                    <h3>Banquet Hall</h3>
+                    <p>A perfect venue for celebrations and meetings.</p>
+                </div>
+            </div>
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="Images\20250102_123240.jpg" alt="Swimming Pool">
+                <div class="description">
+                    <h3>Swimming Pool</h3>
+                    <p>Refresh and rejuvenate in our crystal-clear pool.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for Animation
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        // Target all gallery items
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach((item) => observer.observe(item));
+    </script>
+</body>
+<footer class="footer">
+    <p>&copy; 2025 Hotel Nivetha. All Rights Reserved.</p>
+</footer>
+</html>

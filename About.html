@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hotel Nivetha</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf2fc;
+            color: #004080;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-top: 20px;
+            text-align: justify;
+            color: #004080;
+        }
+
+        .tourist-places {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .place-card {
+            width: calc(33.333% - 20px);
+            background: #ffffff;
+            border: 1px solid #b0c7e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .place-card:hover {
+            transform: scale(1.05);
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place-card .description {
+            padding: 10px;
+            background: #f8f9fd;
+        }
+
+        .place-card h3 {
+            font-size: 1.2em;
+            color: #003366;
+            margin: 10px 0;
+        }
+
+        .place-card p {
+            font-size: 0.95em;
+            color: #004080;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .place-card {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .place-card {
+                width: 100%;
+            }
+        }
+        .logo {
+            margin-left:140px; /* Push the logo to the right */   
+        }
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items:Top;
+            position: top;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+         .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0; /* Hide middle bar */
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+          .nav-links.active {
+            display: flex;
+        }
+         .nav-links a:hover {
+            color: #ffcc00;
+        }
+          .container1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+           .header {
+            background-color: #004080;
+            color: white;
+            padding: 10px 0px;
+           
+        }
+         .footer {
+            text-align: center;
+            background-color: #004080;
+            color: rgb(235, 235, 243);
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+         @media (max-width: 768px){
+            .logo {
+            margin-top: 5px;
+            margin-left:130px; /* Push the logo to the right */   
+        }
+        .nav-links {
+             list-style: none;
+             display: flex;
+             gap: 20px;
+             padding-left: 40px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <h1 class="logo"></h1>
+            <img src="Images/logo.png" class="logo" alt="Hotel Logo">
+            <nav class="nav-wrapper">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <!-- About Us Section -->
+        <h1>About Us</h1>
+        <div class="about-section">
+            <p>
+                Welcome to Hotel Nivetha, your home away from home. Nestled in the heart of the city, 
+                we pride ourselves on offering top-notch hospitality, elegant accommodations, and unparalleled service. 
+                Whether you're visiting for business or leisure, Hotel Nivetha ensures that your stay is both comfortable and memorable.
+            </p>
+            <p>
+                Nivetha's Inn Lodge is ideally located in the Heart of the Town Pollachi near Gandhi Statue and close to the Bus stand.
+                The Hotel gives you a happiest admosphere,Whether you are a seasoned traveller or just a visitor wanting to discover the heritage sites of Pollachi, Nivetha's Inn is a the ideal place to stay.
+                After a long day out, step into the comforts of your spacious and well designed hotel room ,The rooms are designed with a touch of class that gives you a Feel Home away from home.
+                 All the rooms are equipped with all necessary room amenities.
+            </p>
+        </div>
+
+        <!-- Nearby Tourist Places Section -->
+        <h2>Nearby Tourist Places</h2>
+        <div class="tourist-places">
+            <!-- Place 1 -->
+            <div class="place-card">
+                <img src="Images/temple.jpg" alt="Temple">
+                <div class="description">
+                    <h3>Famous Temple</h3>
+                    <p>Visit this ancient temple located just 2 km from the hotel, known for its intricate architecture and serene ambiance.</p>
+                </div>
+            </div>
+            <!-- Place 2 -->
+            <div class="place-card">
+                <img src="Images/park.jpg" alt="Park">
+                <div class="description">
+                    <h3>City Park</h3>
+                    <p>A lush green park perfect for morning walks and family picnics, just a 5-minute drive from the hotel.</p>
+                </div>
+            </div>
+            <!-- Place 3 -->
+            <div class="place-card">
+                <img src="Images/museum.jpg" alt="Museum">
+                <div class="description">
+                    <h3>Historical Museum</h3>
+                    <p>Explore the rich history and culture of the region at this museum, located 4 km from Hotel Nivetha.</p>
+                </div>
+            </div>
+            <!-- Place 4 -->
+            <div class="place-card">
+                <img src="Images/lake.jpg" alt="Lake">
+                <div class="description">
+                    <h3>Scenic Lake</h3>
+                    <p>Relax by the calm waters of this picturesque lake, located just 3 km away.</p>
+                </div>
+            </div>
+            <!-- Place 5 -->
+            <div class="place-card">
+                <img src="Images/market.jpg" alt="Market">
+                <div class="description">
+                    <h3>Local Market</h3>
+                    <p>Shop for souvenirs and local products at the bustling market, a must-visit spot 1.5 km from the hotel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer">
+    <p>&copy; 2025 Hotel Nivetha. All Rights Reserved.</p>
+</footer>
+</html>
